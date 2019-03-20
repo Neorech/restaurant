@@ -59,21 +59,6 @@ mysql_query("INSERT INTO venta_detalle(vId,vd_idProducto, vd_Cantidad, vd_Costo)
  session_destroy();
 }
 //insertar pedido extra
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 else
 {
 //echo "persona" .$idpersona;

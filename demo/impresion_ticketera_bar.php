@@ -1,4 +1,4 @@
-<style>
+<!--style>
 
 #impresion > th {
     font-weight: normal;
@@ -15,8 +15,9 @@ else
 alert("Para imprimir presione Crtl+P.");
 }
 
-</script>
+</script>-->
 <?
+/*
 $link = mysql_connect("localhost", "root","123456"); 
 mysql_select_db("restaurante", $link);
 $idx=$_GET['id']; 
@@ -110,6 +111,6 @@ if ($row = mysql_fetch_array($result)){
 		$topuno = trim($rowtop[0]);
 	}
 	echo "<script>document.location = 'impresion_ticketera_cocina.php?id=$topuno';</script>";
-
+*/
 ?>      
         

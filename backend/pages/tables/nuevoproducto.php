@@ -1,14 +1,8 @@
-<? session_start(); 
-//include '../../../login/permisos.php';
-//include 'http://localhost/restaurant/login/login.php';
-?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Carta de Productos</title>
-    
-    
+    <title>Jose Maria | Dashboard</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
     <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -16,8 +10,6 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Ionicons -->
     <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-    <!-- DATA TABLES -->
-    <link href="../../plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
     <link href="../../dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
@@ -31,7 +23,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
   </head>
- 
   <body class="skin-blue">
     <div class="wrapper">
       
@@ -239,15 +230,15 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="../../../demo/imagenes/persona/<? echo $_SESSION["pimagen"];  ?>" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs"><? echo   $_SESSION["pernombres"].' '.$_SESSION["perapellidos"]; ?></span>
+                  <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
+                  <span class="hidden-xs">Alexander Pierce</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
                     <p>
-                      Alexander Pierce - Web Developer
+                      Edgar Gonzales - Web Developer
                       <small>Member since Nov. 2012</small>
                     </p>
                   </li>
@@ -288,85 +279,73 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Producto Carta
-            <small>Administracion Producto</small>
+            General Opciones Productos
+            <small>vista previa</small>
           </h1>
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i>Inicio</a></li>
-            <li><a href="#">Producto</a></li>
-            <li class="active">Lista Producto</li>
-            
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#">Forms</a></li>
+            <li class="active">General Elements</li>
           </ol>
           
-          
         </section>
+        <script type="text/javascript" src="js/jquery.tools.min.js"></script>
+    
 
+   
         <!-- Main content -->
         <section class="content">
           <div class="row">
-            <div class="col-xs-12"><!-- /.box -->
-
-
-<div class="box">
+            <!-- left column --><!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-6">
+              <!-- general form elements disabled -->
+              <div class="box box-warning">
                 <div class="box-header">
+                <h3 class="box-title">Detalle Producto</h3>
+                
+                
+                <p></p><div class="box-footer clearfix">
+                  <a href="producto.php" class="btn btn-sm btn-info btn-flat pull-left">Ver lista de Productos</a>
+                  <a href="?idproducto=1&estado=nuevo" class="btn btn-sm btn-default btn-flat pull-right">Agregar Nuevo Producto</a>
+                </div>
+                
+                
                   
-                  <h3 class="box-title">Lista de Producto</h3>
-                  
-                  <div class="box-tools">
-                    <div class="input-group">
-                      <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
-                      <div class="input-group-btn">
-                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
-                      </div>
-                    </div>
-                  </div>
                 </div><!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                    
-                    <tr>
-                    
-                      <th>ID</th>
-                      <th>Producto</th>
-                      <th>Descripcion</th>
-                      <th>Costo</th>
-                      <th>Familia</th>
-                      <th>Imagen</th>
-                      <th>Thumb</th>
-                      <th>Ticket</th>
-                      <th>Carta</th>
-                      <th>Editar</th>
-                      
-                      
-                      
-                    </tr>
+                <div class="box-body">
+                  <form name="form1" id="form1" method="post" >
+                  
+                    <!-- text input -->
+                    <!--<div class="form-group">
+                      <label>Text</label>
+                      <input type="text" class="form-control" placeholder="Enter ..."/>
+                    </div>-->
                     <?
-                    include'producto/productos.php';
+                   require_once('model.php');
+                   echo'<div class="form-group">
+                   <label>Producto</label>
+                   <input type="text" name="producto" id="nombres" class="form-input" value="'.$getSelectProducto['pNombre'].'"/>
+                   <input type="hidden" name="idproducto" id="idpersona" class="form-control" value="'.$getSelectProducto['idProducto'].'"/>
+                 </div>';
+                 echo'<div class="form'
 					?>
-                   <!-- <tr>
-                      <td>183</td>
-                      <td>John Doe</td>
-                      <td>11-7-2014</td>
-                      <td><span class="label label-success">Approved</span></td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                    </tr>--><br>
+                     <button type="submit" name="enviar" >Enviar</button>
 
-                  </table>
+                  </form>
+                  <div id="loading" style="display:none;"><img src="loading.gif" ></div>
+    <div id="response"></div>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
-            </div><!-- /.col -->
-          </div><!-- /.row -->
+            </div><!--/.col (right) -->
+          </div>   <!-- /.row -->
         </section><!-- /.content -->
-        <div class="box-footer clearfix">
-                  <a href="producto.php" class="btn btn-sm btn-info btn-flat pull-left">Ver lista de Producto</a>
-                  <a href="nuevoproducto.php" class="btn btn-sm btn-default btn-flat pull-right">Agregar Nuevo Producto</a>
-                </div>
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Versión</b> 1.0
+          <b>Version</b> 2.0
         </div>
-        <strong>Copyright &copy; 2015 <a href="http://h&eaplicaciones.com">H&E Aplicaciones</a>.</strong> Todos los derechos reservados.
+        <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
       </footer>
     </div><!-- ./wrapper -->
 
@@ -374,31 +353,11 @@
     <script src="../../plugins/jQuery/jQuery-2.1.3.min.js"></script>
     <!-- Bootstrap 3.3.2 JS -->
     <script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <!-- DATA TABES SCRIPT -->
-    <script src="../../plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
-    <script src="../../plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
-    <!-- SlimScroll -->
-    <script src="../../plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
     <!-- FastClick -->
     <script src='../../plugins/fastclick/fastclick.min.js'></script>
     <!-- AdminLTE App -->
     <script src="../../dist/js/app.min.js" type="text/javascript"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../../dist/js/demo.js" type="text/javascript"></script>
-    <!-- page script -->
-    <script type="text/javascript">
-      $(function () {
-        $("#example1").dataTable();
-        $('#example2').dataTable({
-          "bPaginate": true,
-          "bLengthChange": false,
-          "bFilter": false,
-          "bSort": true,
-          "bInfo": true,
-          "bAutoWidth": false
-        });
-      });
-    </script>
-
   </body>
 </html>

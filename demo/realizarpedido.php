@@ -159,7 +159,7 @@
 			//mysql_query("UPDATE venta SET vCantidadProducto = '20', vFecha= '16/09/1986' ,vIdusuario='1',vIdTiket='5'");
 		}
 		echo "<div id='10668'>Pedido Realizado</div>"; 
-		echo "<script languaje='javascript'>alert('pedido registrado. ')</script>";
+	//	echo "<script languaje='javascript'>alert('pedido registrado. ')</script>";
 		session_destroy();
 		echo'<script type="text/javascript">
 		window.location="inicio.php";

@@ -1,4 +1,4 @@
-<style>
+<!--<style>
 
 #impresion > th {
     font-weight: normal;
@@ -15,8 +15,9 @@ else
 alert("Para imprimir presione Crtl+P.");
 }
 
-</script>
+</script>-->
 <?
+/*
 $link = mysql_connect("localhost", "root","123456"); 
 mysql_select_db("restaurante", $link);
 $idx=$_GET['id']; 
@@ -104,6 +105,6 @@ if ($row = mysql_fetch_array($result)){
 	echo $fecha;	
 	echo '<script type="text/javascript">window.print();</script>';
 	echo "<script>document.location = 'inicio.php?id=$id';</script>";
-
+*/
 ?>      
         
