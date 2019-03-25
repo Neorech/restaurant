@@ -622,7 +622,9 @@ function getSelectProductos($idx)
   mysql_select_db('restaurante', $link);
   mysql_query("SET NAMES 'utf8'");
   // Performing SQL query
-  $result = mysql_query('SELECT productos.idProducto, productos.pFamilia, productos.pNombre, productos.pDescripcion, productos.pPrecio, familia.fNombre, productos.idCarta, carta.cDescripcion FROM productos, familia, carta where productos.pFamilia=familia.fId and productos.idCarta=carta.idCarta and productos.idProducto='.$idx.'', $link);
+  $result = mysql_query('SELECT productos.idProducto, productos.pFamilia, productos.pNombre, productos.pDescripcion, productos.pPrecio, productos.pImg,productos.pThumb,familia.fNombre, productos.idCarta, carta.cDescripcion,productos.pTicket 
+  FROM productos, familia, carta
+   where productos.pFamilia=familia.fId and productos.idCarta=carta.idCarta and productos.idProducto='.$idx.'', $link);
  
   // Filling up the array
   $cproductoss = array();

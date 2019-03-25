@@ -1,5 +1,6 @@
 <?
-include('conexion.php');
+mysql_connect('localhost','root','123456');
+mysql_select_db('restaurante');
 if(isset($_POST['submit']))
 {
     $pNombre=$_POST['pNombre'];
@@ -11,7 +12,13 @@ if(isset($_POST['submit']))
     $idCarta=$_POST['idCarta'];
     $pTicket=$_POST['pTicket'];
 
-    $peticion="INSERT INTO productos(pNombre,pDescripcion,pPrecio,pFamilia,pImg,pThumb,idCarta,pTicket) VALUES(?,?,?,?,?,?,?,?)";
-    $stmt = $conn->prepare($peticion);
-    $stmt->bind_param('dds',$pNombre,$pDescripcion,)
+    mysql_query("INSERT INTO productos(pNombre,pDescripcion,pPrecio,pFamilia,pImg,pThumb,idCarta,pTicket) VALUES('$pNombre','$pDescripcion','$pPrecio','$pFamilia','$pImg','$pThumb','$idCarta','$pTicket')");
+     
+    echo "<script>alert('Producto guardado con exito');window.location.href ='producto.php';</script>";
+    
+                                
+   
+    
+
+}
 ?>

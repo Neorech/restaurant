@@ -328,7 +328,7 @@
                 
                 <p></p><div class="box-footer clearfix">
                   <a href="producto.php" class="btn btn-sm btn-info btn-flat pull-left">Ver lista de Productos</a>
-                  <a href="?idproducto=1&estado=nuevo" class="btn btn-sm btn-default btn-flat pull-right">Agregar Nuevo Producto</a>
+                  <a href="nuevoproducto.php" class="btn btn-sm btn-default btn-flat pull-right">Agregar Nuevo Producto</a>
                 </div>
                 
                 
