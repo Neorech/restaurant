@@ -19,7 +19,7 @@ foreach($getProductoss as $getProductos):
 					  <td>'.$getProductos['pThumb'].'</td>
 					  <td>'.$getProductos['pTicket'].'</td>
 					  
-					  <td>'.$getProductos['cDescripcion'].'</td>
+					  <td>'.$getProductos['idCarta'].'</td>
 					  <td><a href="actualizar_producto?idproducto='.$getProductos['idProducto'].'"> Actualizar</a></td>
                       </tr>';
 	 

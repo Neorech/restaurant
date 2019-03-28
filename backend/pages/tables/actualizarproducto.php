@@ -1,3 +1,17 @@
+<?
+include 'conexion.php';
+$consulta = ConsultarProducto($_GET['idProducto']);
+
+function ConsultarProducto($idProducto)
+{
+    $sentencia = "SELECT pNombre, pDescripcion, pFamilia, pImg, pThumb, idCarta, pTicket FROM productos WHERE idProducto='" . $idProducto . "'";
+    $resultado = mysql_query($sentencia) or die(mysql_error());
+    $filas = mysql_fetch_assoc($resultado);
+    return $filas;
+    // echo 'ConsultarProducto';
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -319,25 +333,26 @@
                                     <!--<a href="?idproducto=1&estado=nuevo" class="btn btn-sm btn-default btn-flat pull-right">Agregar Nuevo Producto</a>-->
                                 </div>
 
-                                <form action="insertarproducto.php" method="POST">
+                                <form action="#" >
                                     <div class="form-group">
                                         <div class="col-xs-12">
+                                        
 
-                                            <label for="pNombre">Nuevo Producto </label>
-                                            <input type="text" class="form-control" name="pNombre" id="pNombre" required>
+                                            <label for="pNombre">Producto </label>
+                                            <input type="text" class="form-control" name="pNombre" id="pNombre" value="<?php echo $consulta[1] ?>" required>
                                             <br>
 
                                             <label for="pDescripcion">Descripción de Producto </label>
-                                            <input type="text" class="form-control" name="pDescripcion" id="pDescripcion" required>
+                                            <input type="text" class="form-control" name="pDescripcion" id="pDescripcion" value="<?php echo $consulta[2] ?>" required>
+                                            <br>
+                                           
+                                            <label for=" pPrecio">Precio </label>
+                                            <input type="text" class="form-control" name="pPrecio" id="pPrecio" value="<?php echo $consulta[3] ?>" required>
                                             <br>
 
-                                            <label for="pPrecio">Precio </label>
-                                            <input type="text" class="form-control" name="pPrecio" id="pPrecio" required>
+                                            <label for=" pFamilia">Familia </label>
                                             <br>
-
-                                            <label for="pFamilia">Familia </label>
-                                            <br>
-                                            <select class="form-control" name="pFamilia" id="pFamilia" required>
+                                            <select class="form-control" name="pFamilia" id="pFamilia" <?php echo $consulta[4] ?> required>
                                                 <option value="1">Hamburguesas</option>
                                                 <option value="2">Saltados</option>
                                                 <option value="3">Pastas</option>
@@ -353,23 +368,23 @@
                                             <br>
 
                                             <label for="pImg">Imagen </label>
-                                            <input type="text" class="form-control" name="pImg" id="pImg" required>
+                                            <input type="text" class="form-control" name="pImg" id="pImg" value="<?php echo $consulta[5] ?>" required>
                                             <br>
 
-                                            <label for="pThumb">Imagen Pequeña </label>
-                                            <input type="text" class="form-control" name="pThumb" id="pThumb" required>
+                                            <label for=" pThumb">Imagen Pequeña </label>
+                                            <input type="text" class="form-control" name="pThumb" id="pThumb" value="<?php echo $consulta[6] ?>" required>
                                             <br>
 
-                                            <!-- <label for="idCarta">Carta </label>
-                                    <input type="text" class="form-control" name="idCarta" id="idCartar">
-                                    <br>
-                                    <label for="pFamilia">Familia </label>
-                                    <br>-->
+                                            <!-- <label for=" idCarta">Carta </label>
+                                            <input type="text" class="form-control" name="idCarta" id="idCartar" >
+                                            <br>
+                                            <label for="pFamilia">Familia </label>
+                                            <br>-->
                                             <label for="idCarta">Carta </label>
-                                            <input type="text" class="form-control" name="idCarta" value="3" id="idCarta" required>
+                                            <input type="text" class="form-control" name="idCarta" value="<?php echo $consulta[7] ?>" id="idCarta" required>
                                             <br>
                                             <label for="pTicket">Elija Ticketera</label>
-                                            <select class="form-control" name="pTicket" id=pTicket required>
+                                            <select class="form-control" name="pTicket" id=pTicket value="<?php echo $consulta[8] ?>" required>
                                                 <option value="1">Cocina</option>
                                                 <option value="0">Bar</option>
 

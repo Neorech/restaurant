@@ -1,9 +1,9 @@
 <?
- $conexion = mysql_connect("localhost","root","123456");
- mysql_query("restaurante",$conexion);
+mysql_connect('localhost','root','123456');
+mysql_select_db('restaurante');
  mysql_query("SET NAMES 'utf8'");
 
- $sentencia="SELECT * FROM productos";
+ /*$sentencia="SELECT * FROM productos";
  $resultado=mysql_query($sentencia);
  while($filas=mysql_fetch_assoc($resultado))
  {
@@ -18,5 +18,5 @@
         echo"<td>"; echo $filas['pTicket']; echo "</td>";
 
     echo"</tr>";
- }
+ }*/
 ?>

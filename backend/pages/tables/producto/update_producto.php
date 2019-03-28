@@ -49,8 +49,8 @@ mysql_query("UPDATE productos SET pNombre = '$producto', pDescripcion = '$descri
 }
 //echo "____________".$idpersona;
 			echo '<p></p><div class="box-footer clearfix">
-                  <a href="persona.php" class="btn btn-sm btn-info btn-flat pull-left">Ver lista de Personal Registrado</a>
-                  <a href="nuevoproducto.php" class="btn btn-sm btn-default btn-flat pull-right">Agregar Nuevo Personal</a>
+                  <a href="producto.php" class="btn btn-sm btn-info btn-flat pull-left">Ver Productos Registrados Registrado</a>
+                  <a href="nuevoproducto.php" class="btn btn-sm btn-default btn-flat pull-right">Agregar Nuevo Producto</a>
                 </div>';
 
 ?>
