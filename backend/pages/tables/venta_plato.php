@@ -17,8 +17,8 @@ $id=1;
 	echo '
 	<tr>
                       <td>'.$id.'</td>
-                      <td>'.$getVentaCantidadPlato['pNombre'].'</td>
-                      <td>'.$getVentaCantidadPlato['suma'].'</td>
+                      <td>'.$getVentaCantidadPlatos['pNombre'].'</td>
+                      <td>'.$getVentaCantidadPlatos['suma'].'</td>
                       <td><span class="label label-success">Detalle</span></td>
                       <td>Detalle de los platos</td>
                     </tr>';	
